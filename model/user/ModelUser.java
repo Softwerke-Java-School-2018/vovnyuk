@@ -1,28 +1,34 @@
 package model.user;
 
-import model.DataTables;
-import entities.This;
-import view.MainMenu;
+import entities.Builder;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.ListIterator;
+
 
 public class ModelUser {
 
-    private DataTables dataTables = new DataTables();
-    private MainMenu mainMenu = new MainMenu();
+    private ArrayList<Builder> list = new ArrayList<>();
 
-    public void addNext(String firstName, String secondName, LocalDate localDate) {
-
-        dataTables.getUserList().add(This.builder()
-                .firstName(firstName)
-                .secondName(secondName)
-                .birthDay(localDate)
-                .build());
-
-        System.out.println("User was successfully added");
-        mainMenu.showMenu();
-
+    public void addNext(Builder person) {
+        this.list.add(person);
     }
 
+    public ArrayList<Builder> getClients(){
+        return list;
+    }
+
+
+    public void deleteUser(int idToDelete){
+        ArrayList<Builder> entity = getClients();
+        ListIterator<Builder> listIter = entity.listIterator();
+        while (listIter.hasNext()){
+            Builder next = listIter.next();
+            if (idToDelete == next.getId()){
+                listIter.remove();
+            }
+        }
+
+    }
 
 }

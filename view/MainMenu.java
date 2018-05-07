@@ -7,14 +7,14 @@ import view.user.UserView;
 
 public class MainMenu {
 
+
     private static UserView userView = new UserView();
 
     private final static String menu = "Menu. Choose what do you want to do:" + "\n" +
             "1. Actions with users" + "\n" +
             "2. Actions with devices" + "\n" +
-            "3. Sort" + "\n" +
-            "4. Search" + "\n" +
-            "5. Exit";
+            "3. Actions with purchases" + "\n" +
+            "4. Exit";
 
     public void showMenu() {
 
@@ -26,7 +26,11 @@ public class MainMenu {
             case "1":
                 userView.userMenu();
                 break;
-            case "5":
+ /*           case "2":
+                modelView.userMenu();
+            case "3":
+                purchaseView.userMenu();*/
+            case "4":
                 System.exit(0);
                 break;
         }
