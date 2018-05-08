@@ -3,12 +3,14 @@ package view;
 import java.util.Scanner;
 
 import view.user.UserView;
+import view.device.DeviceView;
 
 
 public class MainMenu {
 
 
     private static UserView userView = new UserView();
+    private static DeviceView deviceView = new DeviceView();
 
     private final static String menu = "Menu. Choose what do you want to do:" + "\n" +
             "1. Actions with users" + "\n" +
@@ -26,9 +28,9 @@ public class MainMenu {
             case "1":
                 userView.userMenu();
                 break;
- /*           case "2":
-                modelView.userMenu();
-            case "3":
+            case "2":
+                deviceView.DeviceMenu();
+/*            case "3":
                 purchaseView.userMenu();*/
             case "4":
                 System.exit(0);

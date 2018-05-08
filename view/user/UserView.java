@@ -26,13 +26,14 @@ public class UserView {
             "4. By birthday" + "\n" +
             "5. Exit";
 
-    private final static String sortMenu = "User sort menu. Select the attribute by which you want to sort:" + "\n" +
+    private final static String userSortMenu = "User sort menu. Select the attribute by which you want to sort:" + "\n" +
             "1. By first name" + "\n" +
             "2. By second name" + "\n" +
             "3. By birthday" + "\n" +
             "4. Exit";
 
     private Scanner in = new Scanner(System.in);
+    private Scanner kek = new Scanner(System.in);
 
     public void userMenu() {
         String choice;
@@ -52,16 +53,16 @@ public class UserView {
                 deleteUser();
                 break;
             case "5":
-                sortMenu();
+                userSortMenu();
                 break;
             case "6":
                 System.exit(0);
         }
     }
 
-    private void sortMenu(){
+    private void userSortMenu(){
         String choice;
-        System.out.println(userFindMenu);
+        System.out.println(userSortMenu);
         choice = in.nextLine();
         switch (choice) {
             case "1":
@@ -117,7 +118,7 @@ public class UserView {
 
     private void searchById() {
         System.out.println("Enter Id:");
-        int checkingId = in.nextInt();
+        int checkingId = kek.nextInt();
         userController.findUserById(checkingId);
         mainMenu.showMenu();
     }
@@ -156,7 +157,7 @@ public class UserView {
 
     private void deleteUser() {
         System.out.print("Enter user's id you want to delete:");
-        int idToDelete = in.nextInt();
+        int idToDelete = kek.nextInt();
         userController.delete(idToDelete);
         mainMenu.showMenu();
     }
