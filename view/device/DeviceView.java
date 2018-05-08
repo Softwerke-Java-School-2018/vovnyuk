@@ -1,14 +1,12 @@
 package view.device;
 
 import java.math.BigDecimal;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import entities.Colours;
 import entities.DeviceType;
 import view.MainMenu;
 import controller.device.DeviceController;
-import view.device.TextForMenu;
 
 public class DeviceView {
 
