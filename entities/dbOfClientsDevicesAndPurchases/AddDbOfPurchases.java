@@ -1,4 +1,4 @@
-package entities.dbOfClientsAndDevices;
+package entities.dbOfClientsDevicesAndPurchases;
 
 import controller.purchase.PurchaseController;
 import entities.builders.DeviceBuilder;

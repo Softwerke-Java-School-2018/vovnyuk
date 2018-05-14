@@ -1,8 +1,8 @@
-import entities.dbOfClientsAndDevices.AddDbOfPurchases;
+import entities.dbOfClientsDevicesAndPurchases.AddDbOfPurchases;
 import view.MainMenu;
 
-import entities.dbOfClientsAndDevices.AddDbOfClients;
-import entities.dbOfClientsAndDevices.AddDbOfDevices;
+import entities.dbOfClientsDevicesAndPurchases.AddDbOfClients;
+import entities.dbOfClientsDevicesAndPurchases.AddDbOfDevices;
 
 public class Start {
 

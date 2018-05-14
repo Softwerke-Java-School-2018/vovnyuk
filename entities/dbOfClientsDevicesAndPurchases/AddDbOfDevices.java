@@ -1,4 +1,4 @@
-package entities.dbOfClientsAndDevices;
+package entities.dbOfClientsDevicesAndPurchases;
 
 import controller.device.DeviceController;
 import entities.enums.Colours;
