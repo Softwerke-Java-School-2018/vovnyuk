@@ -8,7 +8,7 @@ public class PurchaseBuilder {
 
     private String firstName;
     private String secondName;
-    private static int i = 0;
+    private static int i = 1;
     private ArrayList<DeviceBuilder> listOfPurchasedDevices;
     private BigDecimal purchasesTotalPrice;
     private int purchasesId;

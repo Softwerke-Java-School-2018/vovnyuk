@@ -7,7 +7,7 @@ public class Builder {
     private String secondName;
     private LocalDate birthDay;
     private int id;
-    private static int i = 0;
+    private static int i = 1;
 
     public Builder(String firstName, String secondName, LocalDate birthDay) {
         this.firstName = firstName;

@@ -1,10 +1,6 @@
 package controller.purchase;
 
 import comparators.purchaseComparators.*;
-import comparators.ModelComparator;
-import comparators.ManufacturerComparator;
-
-import entities.builders.DeviceBuilder;
 import entities.builders.PurchaseBuilder;
 import model.purchase.ModelPurchase;
 
@@ -12,11 +8,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class PurchaseSortController {
-
-    public void sortById(){
-
-    }
-
 
     public void sortByFirstName() {
         ArrayList<PurchaseBuilder> entity = ModelPurchase.getListOfPurchases();
@@ -53,28 +44,4 @@ public class PurchaseSortController {
         for (PurchaseBuilder purchase : entity)
             System.out.println(purchase);
     }
-
-//    public void sortByManufacturer() {
-//        ArrayList<PurchaseBuilder> entity = ModelPurchase.getListOfPurchases();
-//        for (PurchaseBuilder purchase : entity) {
-//            ArrayList<PurchaseBuilder> deviceEntity = ModelPurchase.getListOfPurchases();
-//            Collections.sort(deviceEntity, new ManufacturerComparator());
-//            System.out.println("\nSorted by manufacturer");
-//        }
-//        for (PurchaseBuilder purchase : entity)
-//            System.out.println(purchase);
-//    }
-//
-//    public void sortByModel() {
-//        ArrayList<PurchaseBuilder> entity = ModelPurchase.getListOfPurchases();
-//
-//        System.out.println("\nSorted by model");
-//        for (PurchaseBuilder purchase : entity) {
-//            ArrayList<DeviceBuilder> deviceEntity = purchase.getListOfPurchasedDevices();
-//            Collections.sort(deviceEntity, new ModelPurchaseComparator());
-//        }
-//
-//        for (DeviceBuilder device : deviceEntity)
-//            System.out.println(purchase);
-//    }
 }

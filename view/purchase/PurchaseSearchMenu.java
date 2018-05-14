@@ -41,7 +41,7 @@ class PurchaseSearchMenu {
             case "8":
                 System.exit(0);
             default:
-                System.out.println("Wrong enter. Enter only number of menu item (1-7)");
+                System.out.println("Wrong enter. Enter only number of menu item (1-8)");
                 purchaseSearchMenu();
         }
     }

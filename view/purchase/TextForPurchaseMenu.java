@@ -27,17 +27,14 @@ class TextForPurchaseMenu {
             "7. By purchase's id" + "\n" +
             "8. Exit";
 
-    private final static String stringPurchaseSortMenu = "User sort menu. Select the attribute by which you want to sort:" + "\n" +
-            "1. By id" + "\n" +
-            "2. By first name" + "\n" +
-            "3. By second name" + "\n" +
-            "4. By manufacturer" + "\n" +
-            "5. By model" + "\n" +
-            "6. By total price of purchase" + "\n" +
-            "7. By date of the purchase" + "\n" +
-            "8. Exit";
+    private final static String stringPurchaseSortMenu = "Purchase sort menu. Select the attribute by which you want to sort:" + "\n" +
+            "1. By client's first name" + "\n" +
+            "2. By client's second name" + "\n" +
+            "3. By total price of purchase" + "\n" +
+            "4. By date of the purchase" + "\n" +
+            "5. Exit";
 
-    private final static String stringDateOfPurchase = "Please enter today's date of purchase";
+    private final static String stringDateOfPurchase = "Please enter today's date of purchase:";
 
     void purchaseMenu(){
         System.out.println(stringPurchaseMenu);

@@ -9,7 +9,6 @@ import view.purchase.PurchaseView;
 
 public class MainMenu {
 
-
     private static UserView userView = new UserView();
     private static DeviceView deviceView = new DeviceView();
     private static PurchaseView purchaseView = new PurchaseView();

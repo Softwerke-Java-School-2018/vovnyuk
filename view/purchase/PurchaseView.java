@@ -52,12 +52,12 @@ public class PurchaseView {
 
     }
 
-    private void purchaseSearchMenu(){
+    private void purchaseSearchMenu() {
         purchaseSearchMenu.purchaseSearchMenu();
         mainMenu.showMenu();
     }
 
-    private void purchaseSortMenu(){
+    private void purchaseSortMenu() {
         purchaseSortMenu.purchaseSortMenu();
         mainMenu.showMenu();
     }
@@ -116,7 +116,7 @@ public class PurchaseView {
         mainMenu.showMenu();
     }
 
-    private void purchaseRecordWithNewClient(){
+    private void purchaseRecordWithNewClient() {
         System.out.print("Enter your first name:  ");
         String firstName = anotherOne.nextLine();
         System.out.print("Enter your second name:  ");
@@ -151,7 +151,7 @@ public class PurchaseView {
         return dateOfPurchase;
     }
 
-    private void deletePurchase(){
+    private void deletePurchase() {
         System.out.print("Enter purchase's id you want to delete:");
         int idToDelete = kek.nextInt();
         purchaseController.delete(idToDelete);
