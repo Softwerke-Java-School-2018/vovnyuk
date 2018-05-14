@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import view.user.UserView;
 import view.device.DeviceView;
+import view.purchase.PurchaseView;
 
 
 public class MainMenu {
@@ -11,6 +12,7 @@ public class MainMenu {
 
     private static UserView userView = new UserView();
     private static DeviceView deviceView = new DeviceView();
+    private static PurchaseView purchaseView = new PurchaseView();
 
     private final static String menu = "Menu. Choose what do you want to do:" + "\n" +
             "1. Actions with users" + "\n" +
@@ -19,7 +21,6 @@ public class MainMenu {
             "4. Exit";
 
     public void showMenu() {
-
         String choice;
         System.out.println(menu);
         Scanner in = new Scanner(System.in);
@@ -30,11 +31,16 @@ public class MainMenu {
                 break;
             case "2":
                 deviceView.DeviceMenu();
-/*            case "3":
-                purchaseView.userMenu();*/
+                break;
+            case "3":
+                purchaseView.purchaseMenu();
+                break;
             case "4":
                 System.exit(0);
                 break;
+            default:
+                System.out.println("Wrong enter. Enter only number of menu item (1-4) ");
+                showMenu();
         }
 
 

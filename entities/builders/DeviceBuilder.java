@@ -1,4 +1,7 @@
-package entities;
+package entities.builders;
+
+import entities.enums.Colours;
+import entities.enums.DeviceType;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -29,57 +32,28 @@ public class DeviceBuilder {
         return dateOfManufacture;
     }
 
-    public void setDateOfManufacture(LocalDate dateOfManufacture) {
-        this.dateOfManufacture = dateOfManufacture;
-    }
-
     public String getModel(){
         return model;
-    }
-
-    public void setModel(String model){
-        this.model = model;
     }
 
     public DeviceType getSelectedType() {
         return selectedType;
     }
 
-    public void setSelectedType(DeviceType selectedType) {
-        this.selectedType = selectedType;
-    }
-
     public Colours getSelectedColour() {
         return selectedColour;
-    }
-
-    public void setSelectedColour(Colours selectedColour) {
-        this.selectedColour = selectedColour;
     }
 
     public long getId() {
         return Id;
     }
 
-    public void setId() {
-        Id = i++;
-    }
-
-
     public String getManufacturer() {
         return manufacturer;
     }
 
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
-
     public BigDecimal getPrice() {
         return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
     }
 
     public String toString()
