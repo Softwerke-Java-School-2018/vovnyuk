@@ -154,7 +154,7 @@ public class PurchaseSearchController {
                 }
             }
         } catch (DateTimeParseException e) {
-            System.out.println("Incorrect birthday format");
+            System.out.println("Incorrect date of purchase format");
         }
     }
 }

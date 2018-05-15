@@ -7,6 +7,7 @@ import model.device.ModelDevice;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 
 public class DeviceSearchController {
@@ -51,6 +52,7 @@ public class DeviceSearchController {
             }
         }
     }
+
     public void findDeviceByManufacturer(String checkingManufacturer) {
         ArrayList<DeviceBuilder> entity = ModelDevice.getDevices();
         int i = 0;
@@ -69,6 +71,7 @@ public class DeviceSearchController {
             }
         }
     }
+
     public void findDeviceByModel(String checkingModel) {
         ArrayList<DeviceBuilder> entity = ModelDevice.getDevices();
         int i = 0;
@@ -87,6 +90,7 @@ public class DeviceSearchController {
             }
         }
     }
+
     public void findDeviceByColour(Colours checkingColour) {
         ArrayList<DeviceBuilder> entity = ModelDevice.getDevices();
         int i = 0;
@@ -105,6 +109,7 @@ public class DeviceSearchController {
             }
         }
     }
+
     public void findDeviceByPrice(BigDecimal checkingPrice) {
         ArrayList<DeviceBuilder> entity = ModelDevice.getDevices();
         int i = 0;
@@ -123,23 +128,29 @@ public class DeviceSearchController {
             }
         }
     }
+
     public void findDeviceByDateOfManufacture(String checkingDateOfManufacture) {
-        ArrayList<DeviceBuilder> entity = ModelDevice.getDevices();
-        int i = 0;
-        LocalDate localDate = LocalDate.parse(checkingDateOfManufacture, formatter);
-        if (entity.size() == 0) {
-            System.out.println("This list is empty");
-        } else {
-            for (DeviceBuilder device : entity) {
-                if (localDate.equals(device.getDateOfManufacture())) {
-                    deviceSearchControllerOutput.deviceSearchControllerOutput(device);
-                } else {
-                    i = i + 1;
+        try {
+            ArrayList<DeviceBuilder> entity = ModelDevice.getDevices();
+            int i = 0;
+            LocalDate localDate = LocalDate.parse(checkingDateOfManufacture, formatter);
+            if (entity.size() == 0) {
+                System.out.println("This list is empty");
+            } else {
+                for (DeviceBuilder device : entity) {
+                    if (localDate.equals(device.getDateOfManufacture())) {
+                        deviceSearchControllerOutput.deviceSearchControllerOutput(device);
+                    } else {
+                        i = i + 1;
+                    }
+                }
+                if (i == entity.size()) {
+                    System.out.println("There is no device manufactured at:" + checkingDateOfManufacture);
                 }
             }
-            if (i == entity.size()) {
-                System.out.println("There is no device manufactured at:" + checkingDateOfManufacture);
-            }
+        } catch (DateTimeParseException e) {
+            System.out.println("Incorrect date of manufacture format");
         }
+
     }
 }

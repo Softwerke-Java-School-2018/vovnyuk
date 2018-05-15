@@ -6,6 +6,9 @@ import view.user.UserView;
 import view.device.DeviceView;
 import view.purchase.PurchaseView;
 
+/**
+ * A hub for the elements of view part.
+ */
 
 public class MainMenu {
 

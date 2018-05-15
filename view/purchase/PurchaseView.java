@@ -10,6 +10,14 @@ import entities.builders.DeviceBuilder;
 import view.MainMenu;
 import controller.user.UserController;
 
+
+/**
+ * Purchase part of view. Creates menu for the client.
+ * There is method for creating a new purchase.
+ * If you want to search or sort, this class will send you to PurchaseSearchMenu or PurchaseSortMenu (
+ * respectively)
+ */
+
 public class PurchaseView {
 
     private TextForPurchaseMenu textForPurchaseMenu = new TextForPurchaseMenu();
@@ -22,6 +30,9 @@ public class PurchaseView {
     private Scanner kek = new Scanner(System.in);
     private Scanner anotherOne = new Scanner(System.in);
 
+    /**
+     * Method that creates a menu.
+     */
     public void purchaseMenu() {
         String choice;
         textForPurchaseMenu.purchaseMenu();
@@ -52,21 +63,34 @@ public class PurchaseView {
 
     }
 
+    /**
+     * Method that is reliable for search. It will send user's request to purchaseSearchMenu.
+     */
     private void purchaseSearchMenu() {
         purchaseSearchMenu.purchaseSearchMenu();
         mainMenu.showMenu();
     }
 
+    /**
+     * Method that is reliable for sort. It will send user's request to purchaseSortMenu.
+     */
     private void purchaseSortMenu() {
         purchaseSortMenu.purchaseSortMenu();
         mainMenu.showMenu();
     }
 
+    /**
+     * Method that is reliable for showing list of all purchases. It will send user's request to purchaseController.
+     */
     private void showListOfPurchases() {
         purchaseController.showList();
         mainMenu.showMenu();
     }
 
+    /**
+     * This method creates menu for repeated request to purchase a device.
+     * It will appear once, and then it can disappear according to the user's decision.
+     */
     private void newPurchaseMenu() {
         String choice;
         textForPurchaseMenu.newPurchaseMenu();
@@ -84,6 +108,11 @@ public class PurchaseView {
         }
     }
 
+    /**
+     * @param currentClient - client from the list of clients. T - Builder.
+     *                      You should know which client will purchase a device and after that will be in list
+     *                      of purchases.
+     */
     private void purchaseRecord(Builder currentClient) {
         ArrayList<DeviceBuilder> currentListOfPurchasedDevices = new ArrayList<>();
         String doYouWantToRepeat;
@@ -116,6 +145,9 @@ public class PurchaseView {
         mainMenu.showMenu();
     }
 
+    /**
+     * Purchase's record to the list with a new client in the store.
+     */
     private void purchaseRecordWithNewClient() {
         System.out.print("Enter your first name:  ");
         String firstName = anotherOne.nextLine();
@@ -128,6 +160,9 @@ public class PurchaseView {
         purchaseRecord(currentClient);
     }
 
+    /**
+     * Purchase's record to the list with an old client in the store.
+     */
     private void purchaseRecordWithOldClient() {
         int checkingUsersId;
         textForPurchaseMenu.findClientById();
@@ -136,6 +171,9 @@ public class PurchaseView {
         purchaseRecord(currentClient);
     }
 
+    /**
+     * Method for searching device from device list by id.
+     */
     private DeviceBuilder findDeviceById() {
         int checkingDevicesId;
         textForPurchaseMenu.devicesIdToPurchase();
@@ -144,6 +182,9 @@ public class PurchaseView {
         return currentDevice;
     }
 
+    /**
+     * Method for recording the date of purchase.
+     */
     private String dateOfPurchase() {
         String dateOfPurchase;
         textForPurchaseMenu.dateOfPurchase();
@@ -151,6 +192,9 @@ public class PurchaseView {
         return dateOfPurchase;
     }
 
+    /**
+     * Method for deleting purchase by its id.
+     */
     private void deletePurchase() {
         System.out.print("Enter purchase's id you want to delete:");
         int idToDelete = kek.nextInt();
